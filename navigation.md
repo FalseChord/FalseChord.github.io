@@ -1,7 +1,6 @@
 # The nav test
 
 [Menu Item 2](item2.md)
-- - - -
 [Menu Item 3](item3.md)
 
 [Test]()

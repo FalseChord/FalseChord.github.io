@@ -1,6 +1,6 @@
 # The nav test
 
-[Menu Item 2](item2.md)
+[中文測試](item2.md)
 [Menu Item 3](item3.md)
 
 [Test]()
@@ -16,3 +16,5 @@
   * # Test sub title 3
   * [Test sub 3-1](31.md)
   * [Test sub 3-2](32.md)
+
+[Test](test/test.md)

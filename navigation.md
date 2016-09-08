@@ -1,19 +1,19 @@
+[gimmick:themechooser](Choose theme)
 # The nav test
 
-[中文測試](item2.md)
-[Menu Item 3](item3.md)
+[About](_About.md)
 
-[Test]()
+[分類資料]()
 
-  * # Test sub head
+  * # 好棒棒的東西
   * [Test sub 1-1](11.md)
   * [Test sub 1-2](12.md)
   - - - -
-  * # Test sub head 2
+  * # 更棒棒的東西
   * [Test sub 2-1](21.md)
   * [Test sub 2-2](22.md)
   ----
-  * # Test sub title 3
+  * # Meow
   * [Test sub 3-1](31.md)
   * [Test sub 3-2](32.md)
 

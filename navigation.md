@@ -1,9 +1,6 @@
 # The nav test
 
-[About](_About.md)
-
 [分類資料]()
-
   * # 好棒棒的東西
   * [Test sub 1-1](11.md)
   * [Test sub 1-2](12.md)

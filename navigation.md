@@ -1,4 +1,3 @@
-[gimmick:themechooser](Choose theme)
 # The nav test
 
 [About](_About.md)
@@ -15,6 +14,9 @@
   ----
   * # Meow
   * [Test sub 3-1](31.md)
+  * # Test 分割
   * [Test sub 3-2](32.md)
 
 [Test](test/test.md)
+
+[gimmick:themechooser](Choose theme)

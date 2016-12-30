@@ -1,1 +1,1 @@
-[2016 MOPCON](2016mopcon.md)
+[2016 MOPCON](conference/2016mopcon.md)

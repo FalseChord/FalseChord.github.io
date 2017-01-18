@@ -2,11 +2,14 @@
 
 [技術相關]()
 
-* #技術不太相關的分類
+* #技術相關
+* [Python](tech/python.md)
+* #技術沒那麼相關的分類
 * [Conference](notsotech/conference.md)
-* [各種心得](notsotech/reviews.md)
 
-[其它想到再分]()
+[讀書心得]()
+
+* [上課心得](reviews/reviews.md)
 
 * [Meow](meow.md)
 

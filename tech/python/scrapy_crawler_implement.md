@@ -8,6 +8,7 @@
 剛好最近想學習Python，就選了一個python寫的爬蟲框架叫做Scrapy來做為下載器的基底。
 
 Scrapy是一個讓你爬網路上資料的框架，下面是官網的架構圖。
+
 ![架構圖](https://doc.scrapy.org/en/latest/_images/scrapy_architecture_02.png)
 
 我只用到其中的spider和item pipeline這兩種模組：
@@ -18,15 +19,15 @@ Scrapy是一個讓你爬網路上資料的框架，下面是官網的架構圖�
 
 ### 2. 建立專案
 
-# 首先在安裝完python和scrapy後，我們在喜愛的地點建立專案目錄：
+首先在安裝完python和scrapy後，我們在喜愛的地點建立專案目錄：
 請參照[官方教學](https://doc.scrapy.org/en/latest/intro/tutorial.html)中的 Creating Project 一段。
 
 ### 3. 撰寫 Spiders
 
-# 接著撰寫 spider 模組：
+接著撰寫 spider 模組：
 這裡選用 [CrawlSpider](https://doc.scrapy.org/en/latest/topics/spiders.html#crawlspider) ，它繼承 [Spider](https://doc.scrapy.org/en/latest/topics/spiders.html)，除了 name, allowed_domains, start_url 這些屬性可設定外，還可以自己寫 rules ，省去在 callback function 中自己 parse 的麻煩。
 
-# 客製化 Config
+客製化 Config
 因為製作parse工具很麻煩，只用在 parse 一個網站上太可惜了，因此想擴展這個 spider ，讓它可以根據我制定的規則，提取頁面裡的所有圖片，而且所有的頁面和規則都要可以從 config 設定。
 參考[這個教學](http://wuchong.me/blog/2015/05/22/running-scrapy-dynamic-and-configurable/)，我可以根據 config 動態產生 spider ，並且定義 link extractor ，甚至指定每個 rule 的 callback (當然必須事先定義在 spider 裡)。
 以下是粗略的

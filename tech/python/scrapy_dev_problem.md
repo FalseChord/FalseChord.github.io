@@ -5,10 +5,11 @@
 Python + Scrapy + Database(postgresql)，parse 使用的語言是 xpath。
 
 ### 目錄
-* Python
-* Postgresql
-* Scrapy
-* xpath
+
+* [Python](#Python)
+* [Postgresql](#Postgresql)
+* [Scrapy](#Scrapy)
+* [xpath](#xpath)
 
 ## Python
 
@@ -36,36 +37,36 @@ Python + Scrapy + Database(postgresql)，parse 使用的語言是 xpath。
     這是一個大坑，被它搞得要更改 config 結構，森77。
     首先我們知道， CrawlerSpider 能夠[使用 rule 傳遞參數給 callback function](https://doc.scrapy.org/en/latest/topics/spiders.html#crawling-rules) ，我本來使用這個方式傳送用來 parse 頁面圖片的規則，但當網頁結構複雜，我就需要手動建立並 yield Request(其實也可以使用定義多個 Rule 的方式，但是會需要重複撰寫自訂參數，且多個 filter 同時作用我擔心會有預期外的效應 parse 到不需要的東西)，但卻發現 rules 中的自訂參數無法帶進被 Request 觸發的 callback 中。最後只好在 callback function 中主動讀取 config，為了做到這件事，我需要改動 config 的結構，除了原本主要的 list 外，為了讓 callback 根據 spider name 存取，以 dictionary 的方式建立另一個 config。如下：
 
-    configs = [{
-        'type': 'generic',
-        'name': 'spider name 1',
-        'url': [
-            'http://domain.one/one/'
-        ],
-        'rules': [{
-            'extractor': {
-                'allow': [
-                    'http://domain.one/*'
-                ],
-                'canonicalize':False,
-                'restrict_xpaths': "(//td[@class='ltable']//p)[2]/a"
-            },
-            'callback': 'link_parsed',
+        configs = [{
+            'type': 'generic',
+            'name': 'spider name 1',
+            'url': [
+                'http://domain.one/one/'
+            ],
+            'rules': [{
+                'extractor': {
+                    'allow': [
+                        'http://domain.one/*'
+                    ],
+                    'canonicalize':False,
+                    'restrict_xpaths': "(//td[@class='ltable']//p)[2]/a"
+                },
+                'callback': 'link_parsed',
+            }]
         }]
-    }]
-    callbackConfig = {
-        'spider name 1':{
-            'link_parsed':{
-                'target_dom':"//table[@class='style_table']//td[3]//a/@href",
-                'name_dom':"",
-                'follow':"handle_redirect"       
-            },
-            'handle_redirect':{
-                'target_dom':"//table[@class='style_table']//a/img/@src",
-                'name_dom':"//div[@id='title']/h1/text()",
+        callbackConfig = {
+            'spider name 1':{
+                'link_parsed':{
+                    'target_dom':"//table[@class='style_table']//td[3]//a/@href",
+                    'name_dom':"",
+                    'follow':"handle_redirect"       
+                },
+                'handle_redirect':{
+                    'target_dom':"//table[@class='style_table']//a/img/@src",
+                    'name_dom':"//div[@id='title']/h1/text()",
+                }
             }
         }
-    }
 
     Spider 的建立寫在 'configs' list 中，對於每個 item 都會建立 spider instance，然後在每個 callback 中都會針對自己的 spider name 和 [callback name](http://stackoverflow.com/questions/251464/how-to-get-a-function-name-as-a-string-in-python) 讀取 callbackConfig 中不同的欄位。
 5. 自訂 referer

@@ -77,7 +77,7 @@ Python + Scrapy + Database(postgresql)，parse 使用的語言是 xpath。
 7. 規範化 callback
     因為需要定義多個 callback ，再根據 callback name 去 apply 不同的 callbackConfig，會造成明明 callback 內容相同只有名字不同的狀況，這邊還要再想想要怎麼 refactor。
 
-## Postgresql
+## xpath
 
 1. 利用開發者工具測試 xpath
     Google Chrome 的 element tab 可以吃 xpath，用它來測試非常方便。

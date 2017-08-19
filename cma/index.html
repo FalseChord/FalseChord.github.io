@@ -1,0 +1,60 @@
+
+<HTML>
+<HEAD>
+<TITLE> ET Today Test Page </TITLE>
+<!-- START:Google Analytics -->
+<script src="//cdn2.ettoday.net/style/ettoday2017/js/jquery.js"></script>
+<script src="//cdn2.ettoday.net/style/ettoday2017/js/jquery.cookie.js"></script> <!--必放-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+//電腦版PC
+ga('create', 'UA-49395399-1', 'ettoday.net', {'name': 'PCWeb'});
+ga('PCWeb.require', 'displayfeatures');
+ga('PCWeb.send', 'pageview');
+
+//全網
+ga('create', 'UA-25690501-1', 'ettoday.net', {'name': 'AllWeb'});
+ga('AllWeb.require', 'displayfeatures');
+//自定維度 *****************************
+if(document.getElementsByName("section").length > 0){ //如果是新聞頁
+    var NewsType = document.getElementsByName("section")[0].content;//抓新聞大類
+    if (NewsType !="") {//新聞大類有資料才傳送自定維度
+        ga('AllWeb.set', 'dimension1', NewsType);
+    }
+}
+ga('AllWeb.send', 'pageview');
+</script>
+<!-- END:Google Analytics -->
+</HEAD>
+<BODY>
+
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+<H2> 客戶端測試網頁 </H2>
+
+<div id="fb-root"></div>
+<div id="fb_like_lead"> </div>
+<script src="finger_print.js"></script>
+<div id="modal_win"></div>
+<script>
+    $('#modal_win').load("modal_css_div.html");  
+</script>
+
+</BODY>
+</HTML>
+
